@@ -194,7 +194,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: Submit
 --- !u!222 &191006390
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -235,7 +235,7 @@ MonoBehaviour:
   QuestionGroupArr:
   - {fileID: 1104017744}
   qaArr: []
-  AnswerPanel: {fileID: 0}
+  AnswerPanel: {fileID: 380526815}
 --- !u!4 &320185513
 Transform:
   m_ObjectHideFlags: 0
