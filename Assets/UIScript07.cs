@@ -22,17 +22,17 @@ public class UIScript07 : MonoBehaviour {
 
     public void SubmitAnswer() {
         for (int i = 0; i < qaArr.Length; i++) {
-            qaArr[i] = ReqdQuestionAndAnswer(QuestionGroupArr[i]);
+            qaArr[i] = ReadQuestionAndAnswer(QuestionGroupArr[i]);
         }
         Displayresult();
     }
 
-    QAClass07 ReqdQuestionAndAnswer(GameObject questionGroup) {
+    QAClass07 ReadQuestionAndAnswer(GameObject questionGroup) {
         QAClass07 result = new QAClass07();
         GameObject q = questionGroup.transform.Find("Question").gameObject;
         GameObject a = questionGroup.transform.Find("Answer").gameObject;
 
-        result.Question = questionGroup.GetComponent<Text>().text;
+        result.Question = q.GetComponent<Text>().text;
 
         var tgGroup = a.GetComponent<ToggleGroup>();
         var textInput = a.GetComponent<InputField>();
