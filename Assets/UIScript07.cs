@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,15 +9,27 @@ public class UIScript07 : MonoBehaviour {
     public QAClass07[] qaArr;
     public GameObject AnswerPanel;
 
+
+    System.Diagnostics.Process p;
+
     // Start is called before the first frame update
     void Start() {
 
         qaArr = new QAClass07[QuestionGroupArr.Length];
 
+
     }
 
     // Update is called once per frame
     void Update() {
+        try {
+            if (p.HasExited) {
+                Debug.Log("Process Ended");
+            } else {
+                Debug.Log("Process Running");
+            }
+        } catch (Exception err){ }
+
 
     }
 
@@ -81,6 +94,12 @@ public class UIScript07 : MonoBehaviour {
         }
 
         AnswerPanel.transform.Find("Answer").GetComponent<Text>().text = s;
+    }
+
+    public void InputTextFocused() {
+        try {
+            p = System.Diagnostics.Process.Start("OSK.exe");
+        } catch (Exception err) { }
     }
 
 }
