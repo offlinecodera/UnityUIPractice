@@ -33,6 +33,7 @@ public class UIScript07 : MonoBehaviour {
 
     }
 
+    // on button click event
     public void SubmitAnswer() {
         for (int i = 0; i < qaArr.Length; i++) {
             qaArr[i] = ReadQuestionAndAnswer(QuestionGroupArr[i]);
